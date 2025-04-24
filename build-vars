@@ -6,7 +6,7 @@ build_vm_id='9000'
 # What directory do you have all of the files in? Use a trailing /
 install_dir='/root/Proxmox-VM-Template/'
 
-# Who are you?
+# Who are you??
 creator='pleskacv'
 
 # Create this file and add your SSH keys 1 per line
