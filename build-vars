@@ -4,7 +4,7 @@
 build_vm_id='9000'
 
 # What directory do you have all of the files in? Use a trailing /
-install_dir='/root/Proxmox-VM-Template'
+install_dir='/root/Proxmox-VM-Template/'
 
 # Who are you?
 creator='pleskacv'
