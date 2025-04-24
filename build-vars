@@ -22,7 +22,7 @@ cloud_img_url='https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-g
 image_name=${cloud_img_url##*/}
 
 # Enter the additional packages you would like in your template.
-package_list='cloud-init,qemu-guest-agent,curl,wget'
+package_list='cloud-init,qemu-guest-agent,curl,wget,htop,locales-all'
 
 # What storage location on your PVE node do you want to use for the template? (zfs-mirror, local-lvm, local, etc.)
 storage_location='local-lvm'
