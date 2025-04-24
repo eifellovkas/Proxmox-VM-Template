@@ -28,7 +28,7 @@ virt-customize --update -a ${image_name}
 virt-customize --install ${package_list} -a ${image_name}
 virt-customize --mkdir ${build_info_file_location} --copy-in ${install_dir}build-info:${build_info_file_location} -a ${image_name}
 qm destroy ${build_vm_id}
-qm create ${build_vm_id} --memory ${vm_mem} --cores ${vm_cores} --net0 virtio,bridge=vmbr0,dhcp=on,ip=dhcp,ipv6=dhcp --name ${template_name}
+qm create ${build_vm_id} --memory ${vm_mem} --cores ${vm_cores} --net0 virtio,bridge=vmbr0,dhcp=1 --name ${template_name}
 qm importdisk ${build_vm_id} ${image_name} ${storage_location}
 qm set ${build_vm_id} --scsihw ${scsihw} --scsi0 ${storage_location}:vm-${build_vm_id}-disk-0
 qm set ${build_vm_id} --ide0 ${storage_location}:cloudinit
