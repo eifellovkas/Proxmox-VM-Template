@@ -33,7 +33,7 @@ qm importdisk ${build_vm_id} ${image_name} ${storage_location}
 qm set ${build_vm_id} --scsihw ${scsihw} --virtio0 ${storage_location}:vm-${build_vm_id}-disk-0
 qm set ${build_vm_id} --ide0 ${storage_location}:cloudinit
 qm set ${build_vm_id} --nameserver ${nameserver} --ostype l26 --searchdomain ${searchdomain} --sshkeys ${keyfile} --ciuser ${cloud_init_user}
-qm set ${build_vm_id} --boot c --bootdisk scsi0
+qm set ${build_vm_id} --boot c --bootdisk virtio0
 #qm set ${build_vm_id} --serial0 socket --vga serial0
 qm set ${build_vm_id} --agent enabled=1
 qm template ${build_vm_id}
