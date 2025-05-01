@@ -30,7 +30,7 @@ virt-customize --mkdir ${build_info_file_location} --copy-in ${install_dir}build
 qm destroy ${build_vm_id}
 qm create ${build_vm_id} --memory ${vm_mem} --cores ${vm_cores} --net0 virtio,bridge=vmbr0 --ipconfig0 ip=dhcp,ip6=auto --name ${template_name}
 qm importdisk ${build_vm_id} ${image_name} ${storage_location}
-qm set ${build_vm_id} --scsihw ${scsihw} --scsi0 ${storage_location}:vm-${build_vm_id}-disk-0
+qm set ${build_vm_id} --scsihw ${scsihw} --virtio0 ${storage_location}:vm-${build_vm_id}-disk-0
 qm set ${build_vm_id} --ide0 ${storage_location}:cloudinit
 qm set ${build_vm_id} --nameserver ${nameserver} --ostype l26 --searchdomain ${searchdomain} --sshkeys ${keyfile} --ciuser ${cloud_init_user}
 qm set ${build_vm_id} --boot c --bootdisk scsi0

@@ -1,7 +1,7 @@
 
 # Change this line to reflect the VMID you would like to use for the template.
 # Select an ID such as 9999 that will be unique to the node.
-build_vm_id='9000'
+build_vm_id='8000'
 
 # What directory do you have all of the files in? Use a trailing /
 install_dir='/root/Proxmox-VM-Template/'
