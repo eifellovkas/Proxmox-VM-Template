@@ -35,7 +35,7 @@ virt-customize --mkdir ${build_info_file_location} --copy-in ${install_dir}build
 qemu-img create -f qcow2 ${install_dir}${image_name}_resized.qcow2 8G
 
 # 2. Expand the root partition to use all space
-virt-resize --expand /dev/sda1 -a ${install_dir}${image_name} -o ${install_dir}${image_name}_resized.qcow2
+virt-resize --expand /dev/sda2 -a ${install_dir}${image_name} -o ${install_dir}${image_name}_resized.qcow2
 
 
 qm destroy ${build_vm_id}
