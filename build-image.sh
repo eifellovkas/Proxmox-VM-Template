@@ -40,7 +40,7 @@ virt-resize --expand /dev/sda1 -a ${install_dir}${image_name} -o ${install_dir}$
 
 qm destroy ${build_vm_id}
 qm create ${build_vm_id} --memory ${vm_mem} --cores ${vm_cores} --net0 virtio,bridge=vmbr0 --ipconfig0 ip=dhcp,ip6=auto --name ${template_name}
-qm importdisk ${build_vm_id} ${image_name}_resized.qcow2 ${storage_location}
+qm importdisk ${build_vm_id} ${install_dir}${image_name}_resized.qcow2 ${storage_location}
 qm set ${build_vm_id} --scsihw ${scsihw} --virtio0 ${storage_location}:vm-${build_vm_id}-disk-0
 qm set ${build_vm_id} --ide0 ${storage_location}:cloudinit
 qm set ${build_vm_id} --nameserver ${nameserver} --ostype l26 --searchdomain ${searchdomain} --sshkeys ${keyfile} --ciuser ${cloud_init_user}
