@@ -27,6 +27,7 @@ echo "Build creator: "${creator} >> ${install_dir}build-info
 virt-customize --update -a ${image_name}
 virt-customize --install ${package_list} -a ${image_name}
 virt-customize --mkdir ${build_info_file_location} --copy-in ${install_dir}build-info:${build_info_file_location} -a ${image_name}
+qemu-img resize ${image_name} 8G
 qm destroy ${build_vm_id}
 qm create ${build_vm_id} --memory ${vm_mem} --cores ${vm_cores} --net0 virtio,bridge=vmbr0 --ipconfig0 ip=dhcp,ip6=auto --name ${template_name}
 qm importdisk ${build_vm_id} ${image_name} ${storage_location}
