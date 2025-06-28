@@ -22,7 +22,7 @@ cloud_img_url='https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-g
 image_name=${cloud_img_url##*/}
 
 # Enter the additional packages you would like in your template.
-package_list='cloud-init,qemu-guest-agent,curl,wget,htop,locales-all,cloud-guest-utils'
+package_list='cloud-init,qemu-guest-agent,curl,wget,htop,locales-all'
 
 # What storage location on your PVE node do you want to use for the template? (zfs-mirror, local-lvm, local, etc.)
 storage_location='local-lvm'
@@ -41,7 +41,7 @@ cloud_init_user='pleskacv'
 scsihw='virtio-scsi-pci'
 
 # What to name your template. This is free form with no spaces and will be used for automation/deployments.
-template_name='debian-12-template-virtio'
+template_name='debian-12-template'
 
 # Memory and CPU cores. These are overridden with image deployments or through the PVE interface.
 vm_mem='2048'
