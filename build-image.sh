@@ -22,7 +22,7 @@ echo "Build creator: ${creator}" >> ${install_dir}build-info
 virt-customize \
   -a ${install_dir}${image_name} \
   --update \
-  --install "${package_list} cloud-guest-utils" \
+  --install "${package_list}" \
   --mkdir ${build_info_file_location} \
   --copy-in ${install_dir}build-info:${build_info_file_location}
 
