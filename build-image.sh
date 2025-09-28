@@ -8,7 +8,35 @@
 # This script is designed to be run inside the ProxMox VE host environment.
 # Modify the install_dir variable to reflect where you have placed the script and associated files.
 
-. ./build-vars
+set -euo pipefail
+
+# default: Debian
+VARS_FILE="./build-vars"
+
+usage() {
+  echo "Použití: $(basename "$0") [-u] [-h]"
+  echo "  (bez parametrů)  Debian (./build-vars)"
+  echo "  -u               Ubuntu (./build-vars_ub)"
+  echo "  -h               Nápověda"
+}
+
+# parametry
+while getopts ":uh" opt; do
+  case "$opt" in
+    u) VARS_FILE="./build-vars_ub" ;;
+    h) usage; exit 0 ;;
+    \?) echo "Neznámý přepínač: -$OPTARG" >&2; usage; exit 2 ;;
+  esac
+done
+shift $((OPTIND - 1))
+
+# načtení proměnných
+if [[ ! -f "$VARS_FILE" ]]; then
+  echo "Soubor s proměnnými '$VARS_FILE' nebyl nalezen." >&2
+  exit 1
+fi
+# shellcheck source=/dev/null
+. "$VARS_FILE"
 
 # Clean up any previous build
 rm ${install_dir}${image_name}
