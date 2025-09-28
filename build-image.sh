@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/usr/bin/env bash
 
 # This script will download and modify the desired image to prep for template build.
 # Script is inspired by 2 separate authors work.
