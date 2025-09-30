@@ -15,7 +15,7 @@ keyfile=${install_dir}keyfile
 # Enter the URL for the cloud-init image you would like to you. Below are Ubuntu Focal
 # and Ubuntu Kinetic. For Focal I like to refresh weekly and Kinetic daily. Uncomment
 # the distro you would like to use.
-cloud_img_url='https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-generic-amd64.qcow2'
+cloud_img_url='https://cloud.debian.org/images/cloud/trixie/latest/debian-13-generic-amd64.qcow2'
 #cloud_img_url='https://cloud-images.ubuntu.com/kinetic/current/kinetic-server-cloudimg-amd64.img'
 
 # Leave this variable alone
@@ -41,7 +41,7 @@ cloud_init_user='pleskacv'
 scsihw='virtio-scsi-pci'
 
 # What to name your template. This is free form with no spaces and will be used for automation/deployments.
-template_name='debian-12-template-virtio'
+template_name='debian-13-template-virtio'
 
 # Memory and CPU cores. These are overridden with image deployments or through the PVE interface.
 vm_mem='2048'
